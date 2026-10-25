@@ -1,0 +1,22 @@
+{
+  "DATA": "data_r3",
+  "PRETRAINED": true,
+  "EPOCHS": 60,
+  "WARMUP_EPOCHS": 2,
+  "BATCH_SIZE": 16,
+  "LR": 0.0003,
+  "WEIGHT_DECAY": 0.0001,
+  "PATIENCE": 12,
+  "USE_CLASS_WEIGHTS": true,
+  "LOSS": "lovasz",
+  "LABEL_SMOOTHING": 0.0,
+  "NOISE_DB": 1.0,
+  "MONTH_MIX": 0.0,
+  "NUM_WORKERS": 2,
+  "SEED": 42,
+  "RUN_NAME": "B_deeplab_v2",
+  "GROUP": "B_deeplab_v2",
+  "ARCH": "deeplabv3plus_resnet50",
+  "MODEL_NAME": "DeepLabV3+ / ResNet-50 v2",
+  "WEIGHTS_USED": "imagenet"
+}

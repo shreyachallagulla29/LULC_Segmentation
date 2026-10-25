@@ -1,0 +1,30 @@
+{
+  "model": "DeepLabV3+ / ResNet-50 v2",
+  "run": "B_deeplab_v2",
+  "group": "B_deeplab_v2",
+  "arch": "deeplabv3plus_resnet50",
+  "params_M": 26.7,
+  "val_oa": 0.7304,
+  "val_miou": 0.4998,
+  "best_epoch": 50,
+  "epochs_run": 60,
+  "train_minutes": 12.4,
+  "per_class_iou": {
+    "Trees": 0.344,
+    "Grass/Shrub": 0.5272,
+    "Cropland": 0.2995,
+    "Built-up": 0.7673,
+    "Bare": 0.2302,
+    "Water": 0.6885,
+    "Wetland": 0.642
+  },
+  "per_class_f1": {
+    "Trees": 0.5119,
+    "Grass/Shrub": 0.6904,
+    "Cropland": 0.461,
+    "Built-up": 0.8683,
+    "Bare": 0.3742,
+    "Water": 0.8155,
+    "Wetland": 0.7819
+  }
+}
