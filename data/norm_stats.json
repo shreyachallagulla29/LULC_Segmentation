@@ -1,0 +1,98 @@
+{
+  "bands": [
+    "VV",
+    "VH",
+    "VV_VH"
+  ],
+  "units": "dB, clipped",
+  "clip": {
+    "VV": [
+      -25.0,
+      5.0
+    ],
+    "VH": [
+      -32.0,
+      -5.0
+    ],
+    "VV_VH": [
+      0.0,
+      20.0
+    ]
+  },
+  "mean": [
+    -10.7679,
+    -18.5369,
+    7.7339
+  ],
+  "std": [
+    5.4385,
+    5.8257,
+    2.9067
+  ],
+  "classes": [
+    "Trees",
+    "Grass/Shrub",
+    "Cropland",
+    "Built-up",
+    "Bare",
+    "Water",
+    "Wetland"
+  ],
+  "ignore_index": 255,
+  "class_weights": [
+    1.0453,
+    0.973,
+    0.7833,
+    0.734,
+    1.1812,
+    1.0964,
+    1.1868
+  ],
+  "year": 2021,
+  "patch_size": 256,
+  "speckle_filter": false,
+  "train_regions": [
+    "atacama",
+    "beauce",
+    "biebrza_marsh",
+    "camargue",
+    "delhi",
+    "everglades",
+    "finland_lahti",
+    "kansas",
+    "kazakh_steppe",
+    "lagos",
+    "lake_constance",
+    "manaus",
+    "montana",
+    "nairobi_plains",
+    "nile_delta",
+    "pantanal",
+    "paris",
+    "phoenix_west",
+    "po_valley",
+    "punjab",
+    "rhine_neckar",
+    "riyadh",
+    "sao_paulo",
+    "sundarbans",
+    "ukraine_fields",
+    "ulaanbaatar",
+    "wadden_coast",
+    "western_desert"
+  ],
+  "val_regions": [
+    "danube_delta",
+    "iowa",
+    "las_vegas",
+    "madrid"
+  ],
+  "test_regions": [
+    "black_forest",
+    "cairo",
+    "hungary_plain",
+    "mekong_delta",
+    "namib_desert",
+    "okavango"
+  ]
+}

@@ -1,0 +1,11 @@
+# Python 3.10+; training was done on a GPU (NVIDIA RTX A6000) - a CPU works for prediction, not for training
+torch
+segmentation-models-pytorch
+numpy
+pandas
+matplotlib
+tqdm
+rasterio
+earthengine-api      # only needed to download data (notebooks 01*, 17a, test_any_region for new places)
+nbformat
+jupyterlab

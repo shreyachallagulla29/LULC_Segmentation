@@ -1,0 +1,39 @@
+name,lat,lon,reason,split,orbit,min_images,images_per_month
+paris,48.86,2.35,Built-up,train,DESCENDING,7,10 7 10 10 10 10 11 11 10 10 10 9
+delhi,28.61,77.21,Built-up,train,DESCENDING,4,5 5 5 5 5 5 5 5 5 5 4 4
+sao_paulo,-23.55,-46.63,Built-up,train,DESCENDING,3,5 4 5 5 5 5 5 4 5 3 5 5
+lagos,6.52,3.38,"Built-up, Water",train,ASCENDING,2,3 2 3 2 3 3 2 3 2 3 2 3
+rhine_neckar,49.45,8.55,Mixed Europe,train,DESCENDING,7,8 7 8 10 10 10 9 9 10 10 10 8
+madrid,40.42,-3.7,"Built-up, Grass",val,DESCENDING,7,11 7 11 10 11 10 10 9 10 10 10 9
+cairo,30.05,31.24,"Built-up, Bare",test,ASCENDING,5,5 5 5 5 5 5 5 5 5 5 5 5
+riyadh,24.71,46.68,"Bare, Built-up",train,ASCENDING,2,3 2 3 2 3 2 3 2 3 2 3 2
+phoenix_west,33.45,-112.45,"Bare, Cropland",train,ASCENDING,6,7 8 7 8 7 8 7 9 8 7 6 6
+las_vegas,36.17,-115.14,"Bare, Built-up",val,DESCENDING,4,6 4 5 5 6 5 5 5 5 5 5 5
+lake_constance,47.6,9.4,Water,train,ASCENDING,7,11 7 11 12 13 11 14 12 12 13 12 12
+finland_lahti,61.0,25.6,"Trees, Water",train,ASCENDING,6,8 6 8 8 11 14 15 15 15 15 12 8
+manaus,-3.1,-60.02,"Trees, Water",train,DESCENDING,2,3 2 3 2 3 2 3 3 2 3 2 3
+wadden_coast,53.17,5.42,"Wetland, Water",train,ASCENDING,10,14 10 12 13 14 11 14 12 13 12 13 11
+sundarbans,22.0,89.3,Wetland (mangrove),train,ASCENDING,2,3 2 3 2 3 2 3 3 2 3 2 3
+everglades,25.8,-80.7,Wetland,train,ASCENDING,2,2 2 3 2 3 2 3 2 3 2 2 3
+danube_delta,45.15,29.35,"Wetland, Water",val,ASCENDING,8,10 8 11 10 10 10 10 10 10 10 10 10
+okavango,-19.3,22.9,"Wetland, Grass",test,ASCENDING,2,2 3 2 3 2 3 3 2 3 2 3 2
+nairobi_plains,-1.5,36.95,Grass/Shrub,train,ASCENDING,5,5 5 5 5 5 5 5 5 5 5 6 5
+ulaanbaatar,47.92,106.92,"Grass, Built-up",train,DESCENDING,2,4 5 5 5 3 4 2 4 5 6 3 3
+montana,47.0,-108.0,Grass/Shrub,train,DESCENDING,4,5 5 5 5 5 5 5 6 4 6 4 5
+black_forest,48.05,8.2,Trees,test,DESCENDING,9,11 9 11 12 13 12 11 11 13 12 13 10
+iowa,42.03,-93.62,Cropland,val,ASCENDING,4,6 4 5 4 5 5 5 5 5 5 5 5
+punjab,30.9,75.85,"Cropland, Built-up",train,ASCENDING,4,5 5 5 5 5 5 6 5 5 5 4 5
+beauce,48.2,1.7,Cropland,train,ASCENDING,11,13 12 13 12 12 11 11 12 13 13 12 11
+mekong_delta,10.03,105.78,"Cropland, Water",test,DESCENDING,5,5 5 5 5 5 5 6 5 5 5 5 5
+hungary_plain,46.95,20.65,Cropland,test,DESCENDING,9,9 9 11 10 10 13 12 13 12 13 10 13
+namib_desert,-22.55,14.75,Bare,test,ASCENDING,1,2 4 2 3 2 3 2 3 3 2 2 1
+biebrza_marsh,53.45,22.55,Wetland (reed/marsh),train,ASCENDING,8,10 10 10 10 10 10 9 11 10 11 10 8
+camargue,43.55,4.55,"Wetland, Water",train,ASCENDING,10,11 10 14 13 10 12 12 13 12 12 12 13
+pantanal,-18.0,-57.5,"Wetland, Grass",train,DESCENDING,2,2 3 2 3 2 3 2 3 2 3 2 2
+ukraine_fields,49.4,33.0,Cropland,train,DESCENDING,7,10 9 11 10 8 7 7 9 10 10 10 8
+kansas,38.5,-98.5,"Cropland, Grass",train,ASCENDING,4,5 5 5 4 5 5 5 5 6 5 4 5
+nile_delta,30.8,31.0,Cropland,train,DESCENDING,7,10 7 11 10 11 10 10 9 10 10 10 9
+po_valley,45.1,9.8,Cropland,train,DESCENDING,11,17 11 16 12 15 14 16 13 16 14 15 11
+western_desert,25.0,29.0,Bare,train,ASCENDING,1,2 3 2 3 2 3 2 3 3 2 3 1
+atacama,-23.5,-69.5,Bare,train,DESCENDING,9,10 9 11 10 10 9 10 10 10 10 10 10
+kazakh_steppe,51.0,70.0,Grass/Shrub,train,DESCENDING,3,4 4 5 5 3 5 4 5 4 3 4 4

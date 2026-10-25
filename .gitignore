@@ -1,0 +1,31 @@
+# ---- data: NOT in git (download link / recreate steps in README.md)
+data/raw/
+data/patches/
+data/test_raw/
+data_r*/patches/
+data_r*/train/
+data_r*/val/
+data_r*/test/
+*.tif
+*.npz
+
+# ---- model weights: NOT in git (download link in README.md)
+*.pth
+*.pt
+
+# ---- results of notebooks/test_any_region.ipynb (large prediction arrays)
+runs/test_regions/
+*.npy
+
+# ---- junk / local only
+.ipynb_checkpoints/
+__pycache__/
+*.zip
+_to_delete/
+DL_Full_zip/
+.DS_Store
+Thumbs.db
+
+# zip packages for upload (Zenodo / Drive)
+_upload/
+_original_notebooks_backup/

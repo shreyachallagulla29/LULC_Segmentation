@@ -1,0 +1,4 @@
+split,Trees,Grass/Shrub,Cropland,Built-up,Bare,Water,Wetland
+train,11.86,13.69,21.12,24.06,9.29,10.78,9.2
+val,16.66,9.4,6.42,42.21,3.03,4.99,17.29
+test,21.33,16.18,11.31,21.92,17.28,4.01,7.98
