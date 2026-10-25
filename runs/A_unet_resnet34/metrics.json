@@ -1,0 +1,28 @@
+{
+  "model": "U-Net / ResNet-34",
+  "run": "A_unet_resnet34",
+  "params_M": 24.4,
+  "val_oa": 0.7101,
+  "val_miou": 0.4958,
+  "best_epoch": 21,
+  "epochs_run": 30,
+  "train_minutes": 5.7,
+  "per_class_iou": {
+    "Trees": 0.4054,
+    "Grass/Shrub": 0.29,
+    "Cropland": 0.4947,
+    "Built-up": 0.7286,
+    "Bare": 0.2232,
+    "Water": 0.7638,
+    "Wetland": 0.5652
+  },
+  "per_class_f1": {
+    "Trees": 0.5769,
+    "Grass/Shrub": 0.4496,
+    "Cropland": 0.6619,
+    "Built-up": 0.843,
+    "Bare": 0.3649,
+    "Water": 0.8661,
+    "Wetland": 0.7222
+  }
+}

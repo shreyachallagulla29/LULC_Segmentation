@@ -1,0 +1,4 @@
+,Trees,Grass/Shrub,Cropland,Built-up,Bare,Water,Wetland
+U-Net / ResNet-34,0.405,0.29,0.495,0.729,0.223,0.764,0.565
+DeepLabV3+ / ResNet-50,0.438,0.219,0.491,0.754,0.206,0.748,0.597
+SegFormer / MiT-B2,0.448,0.221,0.571,0.738,0.209,0.752,0.665

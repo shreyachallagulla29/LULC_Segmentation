@@ -1,0 +1,28 @@
+{
+  "model": "SegFormer / MiT-B2",
+  "run": "C_segformer_mitb2",
+  "params_M": 24.7,
+  "val_oa": 0.7313,
+  "val_miou": 0.5148,
+  "best_epoch": 6,
+  "epochs_run": 15,
+  "train_minutes": 3.0,
+  "per_class_iou": {
+    "Trees": 0.4478,
+    "Grass/Shrub": 0.2211,
+    "Cropland": 0.5714,
+    "Built-up": 0.7376,
+    "Bare": 0.2093,
+    "Water": 0.7517,
+    "Wetland": 0.6648
+  },
+  "per_class_f1": {
+    "Trees": 0.6186,
+    "Grass/Shrub": 0.3622,
+    "Cropland": 0.7272,
+    "Built-up": 0.849,
+    "Bare": 0.3462,
+    "Water": 0.8582,
+    "Wetland": 0.7986
+  }
+}

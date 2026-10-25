@@ -1,0 +1,7 @@
+,U-Net / ResNet-34,DeepLabV3+ / ResNet-50,SegFormer / MiT-B2
+black_forest,0.222,0.24,0.222
+cairo,0.274,0.319,0.262
+hungary_plain,0.345,0.347,0.301
+mekong_delta,0.328,0.325,0.299
+namib_desert,0.13,0.137,0.097
+okavango,0.08,0.161,0.115

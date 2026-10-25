@@ -3,28 +3,31 @@
 Semantic segmentation of **7 land-cover classes** (Trees, Grass/Shrub, Cropland, Built-up, Bare, Water, Wetland)
 from **Sentinel-1 radar (VV, VH)** at 10 m, with **ESA WorldCover 2021** as labels.
 
-## Status: round 1 — data pipeline and first U-Net
+## Status: round 2 — model comparison (U-Net, DeepLabV3+, SegFormer)
 
-- **Data:** 38 regions of 12 × 12 km on six continents (28 train / 4 val / 6 test), monthly Sentinel-1 composites
-  for 2021 + WorldCover labels on the same 10 m grid, cut into 256 × 256 px tiles.
-- **Model:** U-Net with a ResNet-34 encoder (ImageNet start), weighted cross-entropy + Dice loss.
-- **Round 2 of this stage:** 10 training regions added for the weak classes (marshes, rural cropland, deserts, steppe),
-  then the U-Net was retrained (`runs/A_round2`).
+- Three networks trained with **identical** data, augmentation, loss and training loop (`train_lib.py`):
+  U-Net / ResNet-34 (04a), DeepLabV3+ / ResNet-50 (04b), SegFormer / MiT-B2 (04c).
+- Notebook 05 compares them on the validation regions and on the 6 test regions.
 
 ## Results so far
 
 | Round | Run | What changed | Val mIoU | Test mIoU |
 |---|---|---|---|---|
 | 1-2 | `A_round2` (U-Net / ResNet-34) | first model, 4 val regions | 0.508 | — |
+| 2 | A / B / C (v1) | U-Net vs DeepLabV3+ vs SegFormer | 0.430 / 0.497 / 0.502 | 0.577 / 0.605 / 0.534 |
 
-Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) … v1 = improvement rounds; "b" = alternative idea.
+Scores of round 2 on its own 4 validation regions: U-Net 0.496, DeepLabV3+ 0.493, SegFormer 0.515 (`runs/comparison_val.csv`).
+
+Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) … v2 = improvement rounds; "b" = alternative idea.
 
 ## Folder structure
 
 ```
 ├── preprocess.py           shared data rules (decoding, clipping, 7 classes, colours, normalisation)
+├── train_lib.py            training code, round 2  (notebooks 04a-c, 05)
 ├── notebooks/
 │   ├── r1_data_first_model/      01 download, 02 preprocessing, 03 first U-Net
+│   ├── r2_model_comparison/      04a U-Net, 04b DeepLabV3+, 04c SegFormer, 05 compare
 ├── data/                   region lists, class statistics  (radar + labels: see "Data")
 └── runs/                   one folder per trained model: config, metrics, curves, confusion matrices
                             (weights *.pth: see "Model weights")
@@ -52,7 +55,7 @@ Files that **are** in git because the code needs them: `data/regions.csv`, `data
 
 `best.pth` files (≈ 95 MB each) are **not in git**. [`weights_all.zip`](https://zenodo.org/records/24060094/files/weights_all.zip?download=1) (1.8 GB) contains
 the weights of all runs; unzip it in the project folder (each file lands in its `runs/<run name>/` folder).
-Runs up to this round: `A_round2`.
+Runs up to this round: `A_round2`, `A_unet_resnet34`, `B_deeplabv3plus_resnet50`, `C_segformer_mitb2`.
 
 ## Setup
 

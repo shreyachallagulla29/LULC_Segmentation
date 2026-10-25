@@ -1,0 +1,4 @@
+,test OA,test mIoU
+U-Net / ResNet-34,0.717,0.577
+DeepLabV3+ / ResNet-50,0.74,0.605
+SegFormer / MiT-B2,0.666,0.534

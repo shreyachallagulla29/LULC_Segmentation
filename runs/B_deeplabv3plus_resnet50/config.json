@@ -1,0 +1,17 @@
+{
+  "MODEL_NAME": "DeepLabV3+ / ResNet-50",
+  "RUN_NAME": "B_deeplabv3plus_resnet50",
+  "DATA": "data",
+  "PRETRAINED": true,
+  "EPOCHS": 40,
+  "WARMUP_EPOCHS": 2,
+  "BATCH_SIZE": 16,
+  "LR": 0.0003,
+  "WEIGHT_DECAY": 0.0001,
+  "PATIENCE": 8,
+  "USE_CLASS_WEIGHTS": true,
+  "USE_DICE": true,
+  "NUM_WORKERS": 2,
+  "SEED": 42,
+  "WEIGHTS_USED": "imagenet"
+}
