@@ -1,0 +1,10 @@
+,model,group,val OA,val mIoU,test OA,test mIoU,params (M),epochs,train min,loss,LR,inputs
+C_segformer_v4,SegFormer / MiT-B2 v4 (+year),C_segformer_v4,0.804,0.613,0.811,0.69,24.736,32,28.46,lovasz,6e-05,monthly+year
+A_unet_v4,U-Net / ResNet-34 v4 (+year),A_unet_v4,0.78,0.568,0.784,0.637,24.45,30,23.761,lovasz,0.0003,monthly+year
+C_segformer_v3,SegFormer / MiT-B2 v3,C_segformer_v3,0.764,0.543,0.756,0.618,24.724,48,12.311,lovasz,6e-05,monthly
+C_segformer_v2,SegFormer / MiT-B2 v2,C_segformer_v2,0.761,0.536,0.754,0.616,24.724,42,8.826,lovasz,0.0001,monthly
+C_segformer_mitb2,SegFormer / MiT-B2,C_segformer_mitb2,0.723,0.502,0.666,0.534,24.724,15,2.987,dice,0.0001,monthly
+B_deeplab_v2,DeepLabV3+ / ResNet-50 v2,B_deeplab_v2,0.73,0.5,0.748,0.61,26.679,60,12.424,lovasz,0.0003,monthly
+B_deeplabv3plus_resnet50,DeepLabV3+ / ResNet-50,B_deeplabv3plus_resnet50,0.738,0.497,0.74,0.605,26.679,31,6.056,dice,0.0003,monthly
+A_unet_v2,U-Net / ResNet-34 v2,A_unet_v2,0.708,0.488,0.755,0.625,24.437,60,12.146,lovasz,0.0003,monthly
+A_unet_resnet34,U-Net / ResNet-34,A_unet_resnet34,0.65,0.43,0.717,0.577,24.437,30,5.696,dice,0.0003,monthly

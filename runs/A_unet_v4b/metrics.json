@@ -1,0 +1,31 @@
+{
+  "model": "U-Net / ResNet-34 v4b (+3-month window)",
+  "run": "A_unet_v4b",
+  "group": "A_unet_v4b",
+  "arch": "unet_resnet34",
+  "features": "monthly+window3",
+  "params_M": 24.4,
+  "val_oa": 0.7323,
+  "val_miou": 0.5166,
+  "best_epoch": 31,
+  "epochs_run": 44,
+  "train_minutes": 34.6,
+  "per_class_iou": {
+    "Trees": 0.343,
+    "Grass/Shrub": 0.4951,
+    "Cropland": 0.3798,
+    "Built-up": 0.7675,
+    "Bare": 0.245,
+    "Water": 0.7019,
+    "Wetland": 0.684
+  },
+  "per_class_f1": {
+    "Trees": 0.5108,
+    "Grass/Shrub": 0.6623,
+    "Cropland": 0.5505,
+    "Built-up": 0.8684,
+    "Bare": 0.3935,
+    "Water": 0.8248,
+    "Wetland": 0.8123
+  }
+}

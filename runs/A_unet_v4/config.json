@@ -1,0 +1,23 @@
+{
+  "DATA": "data_r3",
+  "PRETRAINED": true,
+  "EPOCHS": 60,
+  "WARMUP_EPOCHS": 2,
+  "BATCH_SIZE": 16,
+  "LR": 0.0003,
+  "WEIGHT_DECAY": 0.0001,
+  "PATIENCE": 12,
+  "USE_CLASS_WEIGHTS": true,
+  "LOSS": "lovasz",
+  "LABEL_SMOOTHING": 0.0,
+  "NOISE_DB": 1.0,
+  "MONTH_MIX": 0.0,
+  "NUM_WORKERS": 0,
+  "SEED": 42,
+  "FEATURES": "monthly+year",
+  "RUN_NAME": "A_unet_v4",
+  "GROUP": "A_unet_v4",
+  "ARCH": "unet_resnet34",
+  "MODEL_NAME": "U-Net / ResNet-34 v4 (+year)",
+  "WEIGHTS_USED": "imagenet"
+}
