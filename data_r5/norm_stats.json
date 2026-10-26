@@ -1,0 +1,112 @@
+{
+  "bands": [
+    "VV",
+    "VH",
+    "VV_VH"
+  ],
+  "units": "dB, clipped",
+  "clip": {
+    "VV": [
+      -25.0,
+      5.0
+    ],
+    "VH": [
+      -32.0,
+      -5.0
+    ],
+    "VV_VH": [
+      0.0,
+      20.0
+    ]
+  },
+  "mean": [
+    -11.3698,
+    -18.9867,
+    7.5857
+  ],
+  "std": [
+    5.2918,
+    5.6211,
+    2.8616
+  ],
+  "classes": [
+    "Trees",
+    "Grass/Shrub",
+    "Cropland",
+    "Built-up",
+    "Bare",
+    "Water",
+    "Wetland"
+  ],
+  "ignore_index": 255,
+  "class_weights": [
+    1.0699,
+    0.7905,
+    0.8183,
+    0.8255,
+    1.1458,
+    1.1433,
+    1.2067
+  ],
+  "year": 2021,
+  "patch_size": 256,
+  "speckle_filter": false,
+  "train_regions": [
+    "atacama",
+    "beauce",
+    "biebrza_marsh",
+    "camargue",
+    "dehesa_spain",
+    "delhi",
+    "everglades",
+    "ferlo_sahel",
+    "finland_farms",
+    "finland_lahti",
+    "inner_niger",
+    "kansas",
+    "kazakh_farms",
+    "kazakh_steppe",
+    "kruger_savanna",
+    "lagos",
+    "lake_chad",
+    "lake_constance",
+    "manaus",
+    "manitoba_farms",
+    "montana",
+    "nairobi_plains",
+    "nile_delta",
+    "pantanal",
+    "paris",
+    "phoenix_east",
+    "phoenix_west",
+    "po_valley",
+    "punjab",
+    "rhine_neckar",
+    "riyadh",
+    "riyadh_edge",
+    "sao_paulo",
+    "sundarbans",
+    "ukraine_fields",
+    "ulaanbaatar",
+    "wadden_coast",
+    "western_desert"
+  ],
+  "val_regions": [
+    "bangkok",
+    "danube_delta",
+    "iowa",
+    "las_vegas",
+    "madrid",
+    "saskatchewan",
+    "serengeti",
+    "sudd_wetland"
+  ],
+  "test_regions": [
+    "black_forest",
+    "cairo",
+    "hungary_plain",
+    "mekong_delta",
+    "namib_desert",
+    "okavango"
+  ]
+}

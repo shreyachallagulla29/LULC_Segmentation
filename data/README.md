@@ -15,6 +15,7 @@ Unzip every package **in the project folder**. Raw GeoTIFFs of all regions (inst
 |---|---|---|---|---|
 | 1-2 (first U-Net, v1) | `data/regions.csv` | `data/patches/` | `r1_data_first_model/01_download_data`, `02_preprocessing` | [`tiles_r1-2.zip`](https://zenodo.org/records/24060094/files/tiles_r1-2.zip?download=1) |
 | 3-4b (v2, v3, v4, v4b) | `data/regions_r3.csv` | `data_r3/patches/` | + `r3_validation_lovasz/01b_download_r3`, `02b_preprocessing_r3` | [`tiles_r3.zip`](https://zenodo.org/records/24060094/files/tiles_r3.zip?download=1) |
+| 5, 6, 8 (v5, v5b, v6, v8, U-Net v8) | `data/regions_r5.csv` | `data_r5/patches/` | + `r5_more_regions/01c_download_r5`, `02c_preprocessing_r5` | [`tiles_r5.zip`](https://zenodo.org/records/24060094/files/tiles_r5.zip?download=1) |
 
 Downloads go to `data/raw/` (radar `<region>_s1_2021.tif` + label `<region>_label.tif`).
 

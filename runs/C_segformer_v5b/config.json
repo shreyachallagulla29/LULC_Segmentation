@@ -1,0 +1,23 @@
+{
+  "DATA": "data_r5",
+  "PRETRAINED": true,
+  "EPOCHS": 60,
+  "WARMUP_EPOCHS": 5,
+  "BATCH_SIZE": 16,
+  "LR": 6e-05,
+  "WEIGHT_DECAY": 0.01,
+  "PATIENCE": 12,
+  "USE_CLASS_WEIGHTS": true,
+  "LOSS": "lovasz",
+  "LABEL_SMOOTHING": 0.0,
+  "NOISE_DB": 2.0,
+  "MONTH_MIX": 0.3,
+  "NUM_WORKERS": 0,
+  "SEED": 42,
+  "FEATURES": "monthly+window3",
+  "RUN_NAME": "C_segformer_v5b",
+  "GROUP": "C_segformer_v5b",
+  "MODEL_NAME": "SegFormer / MiT-B2 v5b (+3-month window, more regions)",
+  "ARCH": "segformer_mitb2",
+  "WEIGHTS_USED": "imagenet"
+}
