@@ -3,11 +3,12 @@
 Semantic segmentation of **7 land-cover classes** (Trees, Grass/Shrub, Cropland, Built-up, Bare, Water, Wetland)
 from **Sentinel-1 radar (VV, VH)** at 10 m, with **ESA WorldCover 2021** as labels.
 
-## Status: round 5 — 11 targeted training regions (v5, v5b)
+## Status: round 6 — all 12 months + year statistics (v6)
 
-- **11 new training regions** chosen for the weakest classes (download 01c, preprocessing 02c → `data_r5`).
-- **v5:** SegFormer v4 trained on the larger dataset; **v5b:** v4b on the larger dataset.
-- Notebook 05d compares everything on the same val / test regions.
+- **TemporalSegFormer:** the model sees **all 12 months at once**. A small temporal encoder (convolutions along the
+  months of every pixel) gives one feature per month and a summary of the year.
+- **18 year statistics** per pixel: median, 10th / 90th percentile, min, max and range of VV, VH and VV−VH.
+- Both are fused (1 × 1 conv) and passed to SegFormer MiT-B2.
 
 ## Results so far
 (rounds 2+ re-scored on the same 8 validation and 6 test regions)
@@ -22,8 +23,9 @@ from **Sentinel-1 radar (VV, VH)** at 10 m, with **ESA WorldCover 2021** as labe
 | 4 | A / C v4b | 3-month window instead of year | 0.517 / 0.570 | 0.639 / 0.636 |
 | 5 | C v5 | + 11 targeted training regions | 0.626 | 0.722 |
 | 5 | C v5b | v4b + 11 regions | 0.580 | 0.598 |
+| 6 | C v6 | all 12 months + 18 year statistics (temporal encoder) | 0.650 | 0.730 |
 
-Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) … v5 = improvement rounds; "b" = alternative idea.
+Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) … v6 = improvement rounds; "b" = alternative idea.
 
 ## Folder structure
 
@@ -33,12 +35,14 @@ Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) 
 ├── train_lib_r3.py         round 3                 (06, 05b)
 ├── train_lib_r4.py         round 4                 (07, 05c)
 ├── train_lib_r5.py         rounds 4b / 5           (07b, 08, 05d)
+├── train_lib_r6.py         rounds 6 / 7            (16, 18) + predict_region() for whole areas
 ├── notebooks/
 │   ├── r1_data_first_model/      01 download, 02 preprocessing, 03 first U-Net
 │   ├── r2_model_comparison/      04a U-Net, 04b DeepLabV3+, 04c SegFormer, 05 compare
 │   ├── r3_validation_lovasz/     01b, 02b (8 validation regions), 06 training v2/v3, 05b compare
 │   ├── r4_year_context/          07 year context (v4), 07b 3-month window (v4b), 05c compare
 │   ├── r5_more_regions/          01c, 02c (11 new regions), 08 training v5/v5b, 05d compare
+│   ├── r6_temporal/              16 all 12 months + 18 year statistics (v6)
 ├── data/                   region lists, class statistics  (radar + labels: see "Data")
 ├── data_r3/ data_r5/       tile index + normalisation statistics per data round (tiles: see "Data")
 └── runs/                   one folder per trained model: config, metrics, curves, confusion matrices
@@ -69,7 +73,7 @@ Files that **are** in git because the code needs them: region lists (`data/regio
 
 `best.pth` files (≈ 95 MB each) are **not in git**. [`weights_all.zip`](https://zenodo.org/records/24060094/files/weights_all.zip?download=1) (1.8 GB) contains
 the weights of all runs; unzip it in the project folder (each file lands in its `runs/<run name>/` folder).
-Runs up to this round: `A_round2`, `A_unet_resnet34`, `B_deeplabv3plus_resnet50`, `C_segformer_mitb2`, `A_unet_v2`, `B_deeplab_v2`, `C_segformer_v2`, `C_segformer_v3`, `A_unet_v4`, `A_unet_v4b`, `C_segformer_v4`, `C_segformer_v4b`, `C_segformer_v5`, `C_segformer_v5b`.
+Runs up to this round: `A_round2`, `A_unet_resnet34`, `B_deeplabv3plus_resnet50`, `C_segformer_mitb2`, `A_unet_v2`, `B_deeplab_v2`, `C_segformer_v2`, `C_segformer_v3`, `A_unet_v4`, `A_unet_v4b`, `C_segformer_v4`, `C_segformer_v4b`, `C_segformer_v5`, `C_segformer_v5b`, `C_segformer_v6`.
 
 ## Setup
 
