@@ -3,12 +3,12 @@
 Semantic segmentation of **7 land-cover classes** (Trees, Grass/Shrub, Cropland, Built-up, Bare, Water, Wetland)
 from **Sentinel-1 radar (VV, VH)** at 10 m, with **ESA WorldCover 2021** as labels.
 
-## Status: round 6 — all 12 months + year statistics (v6)
+## Status: round 7 — 20 rice / wetland / shrub / city regions (v7)
 
-- **TemporalSegFormer:** the model sees **all 12 months at once**. A small temporal encoder (convolutions along the
-  months of every pixel) gives one feature per month and a summary of the year.
-- **18 year statistics** per pixel: median, 10th / 90th percentile, min, max and range of VV, VH and VV−VH.
-- Both are fused (1 × 1 conv) and passed to SegFormer MiT-B2.
+- **20 new regions** for rice paddies, natural wetland, shrubland and dense cities (17a, 17b → `data_r7`,
+  added to the `data_r5` tiles).
+- **v7:** the v6 model trained on the larger set. Rice is fixed, but natural wetland and the test score drop,
+  so v6 stays the best model of this round.
 
 ## Results so far
 (rounds 2+ re-scored on the same 8 validation and 6 test regions)
@@ -24,8 +24,9 @@ from **Sentinel-1 radar (VV, VH)** at 10 m, with **ESA WorldCover 2021** as labe
 | 5 | C v5 | + 11 targeted training regions | 0.626 | 0.722 |
 | 5 | C v5b | v4b + 11 regions | 0.580 | 0.598 |
 | 6 | C v6 | all 12 months + 18 year statistics (temporal encoder) | 0.650 | 0.730 |
+| 7 | C v7 | v6 + 20 regions (rice, wetland, shrub, cities) | 0.642 | 0.676 |
 
-Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) … v6 = improvement rounds; "b" = alternative idea.
+Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) … v7 = improvement rounds; "b" = alternative idea.
 
 ## Folder structure
 
@@ -43,8 +44,9 @@ Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) 
 │   ├── r4_year_context/          07 year context (v4), 07b 3-month window (v4b), 05c compare
 │   ├── r5_more_regions/          01c, 02c (11 new regions), 08 training v5/v5b, 05d compare
 │   ├── r6_temporal/              16 all 12 months + 18 year statistics (v6)
+│   ├── r7_rice_wetland_regions/  17a, 17b (20 new regions), 18 training v7
 ├── data/                   region lists, class statistics  (radar + labels: see "Data")
-├── data_r3/ data_r5/       tile index + normalisation statistics per data round (tiles: see "Data")
+├── data_r3/ data_r5/ data_r7/ tile index + normalisation statistics per data round (tiles: see "Data")
 └── runs/                   one folder per trained model: config, metrics, curves, confusion matrices
                             (weights *.pth: see "Model weights")
 ```
@@ -61,6 +63,7 @@ Details per round in [`data/README.md`](data/README.md).
    | [`tiles_r1-2.zip`](https://zenodo.org/records/24060094/files/tiles_r1-2.zip?download=1) | 3.0 GB | first U-Net, v1 |
    | [`tiles_r3.zip`](https://zenodo.org/records/24060094/files/tiles_r3.zip?download=1) | 3.2 GB | v2, v3, v4, v4b |
    | [`tiles_r5.zip`](https://zenodo.org/records/24060094/files/tiles_r5.zip?download=1) | 4.1 GB | v5, v5b, v6, v8, U-Net v8 (main dataset) |
+   | [`tiles_r7_added.zip`](https://zenodo.org/records/24060094/files/tiles_r7_added.zip?download=1) | 1.7 GB | v7 (together with `tiles_r5`) |
    | [`raw_geotiffs.zip`](https://zenodo.org/records/24060094/files/raw_geotiffs.zip?download=1) | 5.4 GB | rebuilding the tiles without Earth Engine |
 
    Check a download with [`SHA256SUMS.txt`](https://zenodo.org/records/24060094/files/SHA256SUMS.txt?download=1) (PowerShell: `Get-FileHash file.zip`).
@@ -73,7 +76,7 @@ Files that **are** in git because the code needs them: region lists (`data/regio
 
 `best.pth` files (≈ 95 MB each) are **not in git**. [`weights_all.zip`](https://zenodo.org/records/24060094/files/weights_all.zip?download=1) (1.8 GB) contains
 the weights of all runs; unzip it in the project folder (each file lands in its `runs/<run name>/` folder).
-Runs up to this round: `A_round2`, `A_unet_resnet34`, `B_deeplabv3plus_resnet50`, `C_segformer_mitb2`, `A_unet_v2`, `B_deeplab_v2`, `C_segformer_v2`, `C_segformer_v3`, `A_unet_v4`, `A_unet_v4b`, `C_segformer_v4`, `C_segformer_v4b`, `C_segformer_v5`, `C_segformer_v5b`, `C_segformer_v6`.
+Runs up to this round: `A_round2`, `A_unet_resnet34`, `B_deeplabv3plus_resnet50`, `C_segformer_mitb2`, `A_unet_v2`, `B_deeplab_v2`, `C_segformer_v2`, `C_segformer_v3`, `A_unet_v4`, `A_unet_v4b`, `C_segformer_v4`, `C_segformer_v4b`, `C_segformer_v5`, `C_segformer_v5b`, `C_segformer_v6`, `C_segformer_v7`.
 
 ## Setup
 

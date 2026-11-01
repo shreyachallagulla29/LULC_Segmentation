@@ -1,0 +1,132 @@
+{
+  "bands": [
+    "VV",
+    "VH",
+    "VV_VH"
+  ],
+  "units": "dB, clipped",
+  "clip": {
+    "VV": [
+      -25.0,
+      5.0
+    ],
+    "VH": [
+      -32.0,
+      -5.0
+    ],
+    "VV_VH": [
+      0.0,
+      20.0
+    ]
+  },
+  "mean": [
+    -11.0976,
+    -18.6786,
+    7.5603
+  ],
+  "std": [
+    4.902,
+    5.1927,
+    2.7758
+  ],
+  "classes": [
+    "Trees",
+    "Grass/Shrub",
+    "Cropland",
+    "Built-up",
+    "Bare",
+    "Water",
+    "Wetland"
+  ],
+  "ignore_index": 255,
+  "class_weights": [
+    0.9743,
+    0.7666,
+    0.7215,
+    0.8919,
+    1.3307,
+    1.2695,
+    1.0456
+  ],
+  "year": 2021,
+  "patch_size": 256,
+  "speckle_filter": false,
+  "train_regions": [
+    "arkansas_rice",
+    "atacama",
+    "australia_shrub",
+    "bangladesh_rice",
+    "beauce",
+    "bengal_rice",
+    "biebrza_marsh",
+    "camargue",
+    "cauvery_rice",
+    "chennai",
+    "dehesa_spain",
+    "delhi",
+    "donana_marsh",
+    "everglades",
+    "ferlo_sahel",
+    "finland_farms",
+    "finland_lahti",
+    "hudson_lowlands",
+    "ibera_wetland",
+    "inner_niger",
+    "java_rice",
+    "kakadu_floodplain",
+    "kansas",
+    "kazakh_farms",
+    "kazakh_steppe",
+    "kruger_savanna",
+    "kuala_lumpur",
+    "lagos",
+    "lake_chad",
+    "lake_constance",
+    "luzon_rice",
+    "manaus",
+    "manitoba_farms",
+    "montana",
+    "nairobi_plains",
+    "niger_mangrove",
+    "nile_delta",
+    "pantanal",
+    "paris",
+    "patagonia_steppe",
+    "phoenix_east",
+    "phoenix_west",
+    "po_valley",
+    "punjab",
+    "rhine_neckar",
+    "riyadh",
+    "riyadh_edge",
+    "sacramento_rice",
+    "sao_paulo",
+    "sundarbans",
+    "texas_rangeland",
+    "thai_rice",
+    "ukraine_fields",
+    "ulaanbaatar",
+    "vasyugan_bog",
+    "vercelli_rice",
+    "wadden_coast",
+    "western_desert"
+  ],
+  "val_regions": [
+    "bangkok",
+    "danube_delta",
+    "iowa",
+    "las_vegas",
+    "madrid",
+    "saskatchewan",
+    "serengeti",
+    "sudd_wetland"
+  ],
+  "test_regions": [
+    "black_forest",
+    "cairo",
+    "hungary_plain",
+    "mekong_delta",
+    "namib_desert",
+    "okavango"
+  ]
+}

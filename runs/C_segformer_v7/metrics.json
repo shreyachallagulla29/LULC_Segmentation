@@ -1,0 +1,43 @@
+{
+  "model": "SegFormer v7 (v6 + 20 new regions)",
+  "run": "C_segformer_v7",
+  "arch": "temporal_segformer_mitb2",
+  "features": "12months+yearstats18",
+  "params_M": 24.8,
+  "val_oa": 0.8328,
+  "val_miou": 0.6417,
+  "val_month_spread": 0.0029,
+  "best_epoch": 21,
+  "epochs_run": 34,
+  "train_minutes": 55.5,
+  "per_class_iou": {
+    "Trees": 0.4199,
+    "Grass/Shrub": 0.6732,
+    "Cropland": 0.6932,
+    "Built-up": 0.7924,
+    "Bare": 0.2797,
+    "Water": 0.7572,
+    "Wetland": 0.8762
+  },
+  "per_class_f1": {
+    "Trees": 0.5914,
+    "Grass/Shrub": 0.8047,
+    "Cropland": 0.8188,
+    "Built-up": 0.8842,
+    "Bare": 0.4372,
+    "Water": 0.8618,
+    "Wetland": 0.934
+  },
+  "test_oa": 0.8073,
+  "test_miou": 0.6755,
+  "test_month_spread": 0.0048,
+  "test_per_class_iou": {
+    "Trees": 0.6411,
+    "Grass/Shrub": 0.3743,
+    "Cropland": 0.7066,
+    "Built-up": 0.8425,
+    "Bare": 0.9629,
+    "Water": 0.8435,
+    "Wetland": 0.3577
+  }
+}
