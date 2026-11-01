@@ -1,0 +1,9 @@
+,IoU,F1
+Trees,0.381,0.552
+Grass/Shrub,0.662,0.797
+Cropland,0.693,0.819
+Built-up,0.78,0.877
+Bare,0.292,0.452
+Water,0.718,0.836
+Wetland,0.787,0.881
+mean,0.616,0.745

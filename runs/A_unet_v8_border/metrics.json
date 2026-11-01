@@ -1,0 +1,43 @@
+{
+  "model": "U-Net v8 (temporal + label borders ignored)",
+  "run": "A_unet_v8_border",
+  "arch": "temporal_unet_resnet34",
+  "features": "12months+yearstats18+border_ignore",
+  "params_M": 24.5,
+  "val_oa": 0.8147,
+  "val_miou": 0.6162,
+  "val_month_spread": 0.0103,
+  "best_epoch": 21,
+  "epochs_run": 34,
+  "train_minutes": 44.2,
+  "per_class_iou": {
+    "Trees": 0.381,
+    "Grass/Shrub": 0.662,
+    "Cropland": 0.6928,
+    "Built-up": 0.7805,
+    "Bare": 0.2923,
+    "Water": 0.7178,
+    "Wetland": 0.7868
+  },
+  "per_class_f1": {
+    "Trees": 0.5517,
+    "Grass/Shrub": 0.7966,
+    "Cropland": 0.8185,
+    "Built-up": 0.8767,
+    "Bare": 0.4524,
+    "Water": 0.8357,
+    "Wetland": 0.8807
+  },
+  "test_oa": 0.8006,
+  "test_miou": 0.6683,
+  "test_month_spread": 0.0036,
+  "test_per_class_iou": {
+    "Trees": 0.6598,
+    "Grass/Shrub": 0.2565,
+    "Cropland": 0.7416,
+    "Built-up": 0.8341,
+    "Bare": 0.9683,
+    "Water": 0.7516,
+    "Wetland": 0.4661
+  }
+}

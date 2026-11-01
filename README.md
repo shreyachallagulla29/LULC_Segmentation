@@ -3,12 +3,13 @@
 Semantic segmentation of **7 land-cover classes** (Trees, Grass/Shrub, Cropland, Built-up, Bare, Water, Wetland)
 from **Sentinel-1 radar (VV, VH)** at 10 m, with **ESA WorldCover 2021** as labels.
 
-## Status: round 7 — 20 rice / wetland / shrub / city regions (v7)
+## Status: round 8 — label borders ignored in training (v8, final model)
 
-- **20 new regions** for rice paddies, natural wetland, shrubland and dense cities (17a, 17b → `data_r7`,
-  added to the `data_r5` tiles).
-- **v7:** the v6 model trained on the larger set. Rice is fixed, but natural wetland and the test score drop,
-  so v6 stays the best model of this round.
+- **Ignore label borders:** in training tiles, every pixel with another class within 1 px (3 × 3 window) is set to
+  *ignore* — WorldCover is least reliable on class boundaries (mixed pixels, 1 px shifts).
+  Validation and test still use the full labels, so the scores stay comparable.
+- **v8** = v6 + this step → best model. **U-Net v8** (19b) checks the same step with a U-Net.
+- **Final model: SegFormer v8** (`runs/C_segformer_v8_border`).
 
 ## Results so far
 (rounds 2+ re-scored on the same 8 validation and 6 test regions)
@@ -25,8 +26,10 @@ from **Sentinel-1 radar (VV, VH)** at 10 m, with **ESA WorldCover 2021** as labe
 | 5 | C v5b | v4b + 11 regions | 0.580 | 0.598 |
 | 6 | C v6 | all 12 months + 18 year statistics (temporal encoder) | 0.650 | 0.730 |
 | 7 | C v7 | v6 + 20 regions (rice, wetland, shrub, cities) | 0.642 | 0.676 |
+| 8 | **C v8** | **v6 + label borders ignored in training** | **0.654** | **0.738** |
+| 8 | A v8 | same as v8 with U-Net | 0.616 | 0.668 |
 
-Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) … v7 = improvement rounds; "b" = alternative idea.
+Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) … v8 = improvement rounds; "b" = alternative idea.
 
 ## Folder structure
 
@@ -37,6 +40,7 @@ Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) 
 ├── train_lib_r4.py         round 4                 (07, 05c)
 ├── train_lib_r5.py         rounds 4b / 5           (07b, 08, 05d)
 ├── train_lib_r6.py         rounds 6 / 7            (16, 18) + predict_region() for whole areas
+├── train_lib_r8.py         round 8                 (19, 19b): label-border ignore, U-Net / DeepLabV3+ option
 ├── notebooks/
 │   ├── r1_data_first_model/      01 download, 02 preprocessing, 03 first U-Net
 │   ├── r2_model_comparison/      04a U-Net, 04b DeepLabV3+, 04c SegFormer, 05 compare
@@ -45,6 +49,7 @@ Run names: **A** = U-Net, **B** = DeepLabV3+, **C** = SegFormer; v1 (no number) 
 │   ├── r5_more_regions/          01c, 02c (11 new regions), 08 training v5/v5b, 05d compare
 │   ├── r6_temporal/              16 all 12 months + 18 year statistics (v6)
 │   ├── r7_rice_wetland_regions/  17a, 17b (20 new regions), 18 training v7
+│   ├── r8_label_borders/         19 SegFormer v8, 19b U-Net v8
 ├── data/                   region lists, class statistics  (radar + labels: see "Data")
 ├── data_r3/ data_r5/ data_r7/ tile index + normalisation statistics per data round (tiles: see "Data")
 └── runs/                   one folder per trained model: config, metrics, curves, confusion matrices
@@ -76,7 +81,7 @@ Files that **are** in git because the code needs them: region lists (`data/regio
 
 `best.pth` files (≈ 95 MB each) are **not in git**. [`weights_all.zip`](https://zenodo.org/records/24060094/files/weights_all.zip?download=1) (1.8 GB) contains
 the weights of all runs; unzip it in the project folder (each file lands in its `runs/<run name>/` folder).
-Runs up to this round: `A_round2`, `A_unet_resnet34`, `B_deeplabv3plus_resnet50`, `C_segformer_mitb2`, `A_unet_v2`, `B_deeplab_v2`, `C_segformer_v2`, `C_segformer_v3`, `A_unet_v4`, `A_unet_v4b`, `C_segformer_v4`, `C_segformer_v4b`, `C_segformer_v5`, `C_segformer_v5b`, `C_segformer_v6`, `C_segformer_v7`.
+Runs up to this round: `A_round2`, `A_unet_resnet34`, `B_deeplabv3plus_resnet50`, `C_segformer_mitb2`, `A_unet_v2`, `B_deeplab_v2`, `C_segformer_v2`, `C_segformer_v3`, `A_unet_v4`, `A_unet_v4b`, `C_segformer_v4`, `C_segformer_v4b`, `C_segformer_v5`, `C_segformer_v5b`, `C_segformer_v6`, `C_segformer_v7`, `C_segformer_v8_border`, `A_unet_v8_border`.
 
 ## Setup
 
