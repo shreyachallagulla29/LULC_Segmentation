@@ -13,9 +13,14 @@ data_r*/test/
 *.pth
 *.pt
 
-# ---- results of notebooks/test_any_region.ipynb (large prediction arrays)
+# ---- local test notebook and its results (not part of the submission)
+notebooks/test_any_region.ipynb
 runs/test_regions/
 *.npy
+
+# ---- prototype: downloaded radar (cache) and partial weight downloads
+prototype/cache/
+*.part
 
 # ---- junk / local only
 .ipynb_checkpoints/

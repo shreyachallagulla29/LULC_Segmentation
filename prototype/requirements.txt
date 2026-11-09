@@ -1,0 +1,10 @@
+# Prototype (Streamlit) - Python 3.10+; runs on a normal laptop CPU, no GPU needed
+streamlit>=1.35
+torch
+segmentation-models-pytorch>=0.4
+numpy
+pandas>=2.1
+matplotlib>=3.6
+rasterio
+earthengine-api
+requests

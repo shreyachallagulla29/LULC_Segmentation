@@ -7,7 +7,7 @@ Each region is 12 x 12 km (1200 x 1200 px), cut into 256 x 256 px tiles.
 Not in git (too large) — archived on Zenodo: **[doi.org/10.5281/zenodo.24060094](https://doi.org/10.5281/zenodo.24060094)**.
 In git: region lists, tile lists and statistics (needed by the code).
 
-Unzip every package **in the project folder**. Raw GeoTIFFs of all regions (instead of downloading from Earth Engine): [`raw_geotiffs.zip`](https://zenodo.org/records/24060094/files/raw_geotiffs.zip?download=1).
+Unzip every package **in the project folder**. Raw GeoTIFFs of all 72 regions (instead of downloading from Earth Engine): [`raw_geotiffs.zip`](https://zenodo.org/records/24060094/files/raw_geotiffs.zip?download=1).
 
 ## What each round uses
 
@@ -18,7 +18,8 @@ Unzip every package **in the project folder**. Raw GeoTIFFs of all regions (inst
 | 5, 6, 8 (v5, v5b, v6, v8, U-Net v8) | `data/regions_r5.csv` | `data_r5/patches/` | + `r5_more_regions/01c_download_r5`, `02c_preprocessing_r5` | [`tiles_r5.zip`](https://zenodo.org/records/24060094/files/tiles_r5.zip?download=1) |
 | 7 (v7) | `data/regions_r7.csv` | `data_r7/patches/` (+ `data_r5`) | + `r7_rice_wetland_regions/17a_download_regions_r7`, `17b_preprocess_r7` | [`tiles_r7_added.zip`](https://zenodo.org/records/24060094/files/tiles_r7_added.zip?download=1) + [`tiles_r5.zip`](https://zenodo.org/records/24060094/files/tiles_r5.zip?download=1) |
 
-Downloads go to `data/raw/` (radar `<region>_s1_2021.tif` + label `<region>_label.tif`).
+Downloads go to `data/raw/` (radar `<region>_s1_2021.tif` + label `<region>_label.tif`);
+places downloaded by the prototype are cached in `prototype/cache/` (not in git).
 
 ## Licences
 
